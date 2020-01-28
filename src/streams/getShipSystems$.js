@@ -7,12 +7,12 @@ import { systems$ } from './systems$.js';
  * Creates a stream containing the Systems in the specified Ship.
  */
 export function getShipSystems$(shipId) {
-    if (!shipId && shipId != 0) return new Rx.BehaviorSubject([]);
+    if (!shipId && shipId !== 0) return new Rx.BehaviorSubject([]);
 
     // Gets the systems for the specified ship.
     function getShipSystems(ships, systems) {
         const shipSystemIds = ships
-            .filter(ship => ship.shipId == shipId)
+            .filter(ship => ship.shipId === shipId)
             .flatMap(ship => ship.systemIds);
         return systems.filter(system => shipSystemIds.includes(system.systemId));
     };

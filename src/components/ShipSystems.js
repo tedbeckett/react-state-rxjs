@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from 'react';
-import * as Streams from '../streams/getShipSystems$';
+import React from 'react';
 import { useShipSystems } from '../hooks/useShipSystems';
 import List from '@material-ui/core/ListItem';
 import ListItem from '@material-ui/core/ListItem';

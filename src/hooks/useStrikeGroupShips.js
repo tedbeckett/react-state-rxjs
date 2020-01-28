@@ -1,12 +1,12 @@
 import { useState, useEffect } from 'react';
-import { getSgShips$ } from '../streams/getSgShips$';
+import { getStrikeGroupShips$ } from '../streams/getStrikeGroupShips$';
 
 export function useStrikeGroupShips(sgId) {
 
     const [sgShips, setSgShips] = useState([]);
 
     useEffect(() => {
-        const sgShips$ = getSgShips$(sgId);
+        const sgShips$ = getStrikeGroupShips$(sgId);
         const subscription = sgShips$.subscribe(setSgShips);
         return () => {
             subscription.unsubscribe();

@@ -1,6 +1,4 @@
-import React, { useState, useEffect } from 'react';
-import * as Rx from 'rxjs';
-import * as Streams from './streams/getShipSystems$';
+import React, { useState } from 'react';
 import { strikeGroups$ } from './streams/strikeGroups$';
 import { useStream } from './hooks/useStream';
 import { StrikeGroups } from './components/StrikeGroups';
@@ -18,15 +16,6 @@ export function App() {
 
   // Id of selected ship in the selected strike group
   const [selectedShipId, setSelectedShipId] = useState();
-
-  // Systems in the selected ship
-  const [shipSystems$, setShipSystems$] = useState(new Rx.BehaviorSubject([]));
-
-  useEffect(() => {
-    const systems$ =  Streams.getShipSystems$(selectedShipId);
-    setShipSystems$(systems$);
-    return () => systems$.complete();
-  }, [selectedShipId]);
 
   function selectStrikeGroup(sgId) {
     setSelectedSgId(sgId);
