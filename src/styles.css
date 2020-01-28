@@ -1,0 +1,53 @@
+.mainContainer {
+    display: flex;
+    flex-direction: row;
+}
+
+.sgContainer {
+    display: flex;
+    flex-direction: column;
+    max-width: 180px;
+    width: 100%;
+    text-align: center
+}
+
+.sgList {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}  
+
+.shipContainer {
+    flex-direction: column;
+    max-width: 140px;
+    width: 100%;
+    text-align: center
+}
+
+.shipList {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.systemList {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.systemContainer {
+    flex-direction: column;
+    max-width: 150px;
+    width: 100%;
+    text-align: center
+}
+
+.List {
+    list-style-type:none;
+    margin-left: 0px;
+}
+
+.ListItem {
+    margin-left: 0px;
+}
